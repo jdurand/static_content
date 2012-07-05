@@ -1,12 +1,22 @@
 require 'spec_helper'
 describe Content do
   it { should allow_mass_assignment_of(:text).as(:admin) }
-  [:slug].each do |attribute|
+  [:text, :slug].each do |attribute|
     it { should validate_presence_of(attribute) }
   end
+  context "uniqueness" do
+    before {Content.create({slug: :awesome, text: "Okay"}, as: :admin)}
+    [:slug].each do |attribute|
+      it {should validate_uniqueness_of(attribute)}
+    end
+  end
+  it "requires a default option" do
+    expect{Content.from_slug(:this_slug_has_not_default)}.to raise_error NoDefaultContentError
+  end
+
   context "given a new record" do
     it 'creates a content based on a slug' do
-      expect{Content.from_slug(:my_awesome_slug)}.to change(Content, :count).by(1)
+      expect{Content.from_slug(:my_awesome_slug, default: "Something")}.to change(Content, :count).by(1)
     end
     it 'creates a content with a default text' do
       default_text = "Hi, this is dog"
