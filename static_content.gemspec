@@ -7,11 +7,11 @@ require "static_content/version"
 Gem::Specification.new do |s|
   s.name        = "static_content"
   s.version     = StaticContent::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of StaticContent."
-  s.description = "TODO: Description of StaticContent."
+  s.authors     = ["Pedro Nascimento", "Sylvestre Mergulhao", "Rodrigo Pinto"]
+  s.email       = ["pedro@helabs.com.br"]
+  s.homepage    = "http://www.helabs.com.br"
+  s.summary     = "static_content provides a simple way of outputting static content in your app."
+  s.description = s.summary
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
 
