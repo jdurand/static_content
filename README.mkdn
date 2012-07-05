@@ -1,0 +1,17 @@
+= What is static_content?
+static_content provides an easy way of defining static content in your application.
+
+= Usage
+
+In your view, just add:
+
+```erb
+<%=c :sidebar_content, default: "Placeholder Sidebar Content" %>
+```
+
+Please note that a `default` option is required. If it hasn't been created, it will be created upon the first request.
+
+This is intended to be used with admin panels such as Typus or ActiveAdmin.
+
+
+This project rocks and uses MIT-LICENSE.
