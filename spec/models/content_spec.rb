@@ -23,7 +23,7 @@ describe Content do
       fetched_content.should == @content
     end
 
-    it "doesnt touch it" do
+    it "doesn't touch it" do
       fetched_content = Content.from_slug(:my_already_created_slug, default: "I have no idea what I'm doing")
       fetched_content.text.should == "Hi, this is dog"
     end
