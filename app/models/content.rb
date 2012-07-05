@@ -1,11 +1,10 @@
+require 'rdiscount' #TODO: Fix this stupid require statement.
 class Content < ActiveRecord::Base
   attr_accessible :slug, :text, as: :admin
   validates :slug, presence: true
-  def self.markdown(slug)
-    binding
-    RDiscount.new(content(slug).text).to_html.html_safe
-  rescue
-    nil
+
+  def parsed_text
+    RDiscount.new(text).to_html.html_safe
   end
   class << self
     def from_slug(slug, options={})
