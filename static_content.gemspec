@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = "static_content provides a simple way of outputting static content in your app."
   s.description = s.summary
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.mkdn"]
 
   s.add_dependency "rails", "~> 3.2.6"
   s.add_dependency "rdiscount", "~> 1.6.8"
