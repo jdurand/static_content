@@ -1,3 +1,5 @@
+### work in progress.
+
 #What is static_content?
 static_content provides an easy way of defining static content in your application.
 
