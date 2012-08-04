@@ -22,6 +22,10 @@ describe Content do
       default_text = "Hi, this is dog"
       Content.from_slug(:my_awesome_slug, default: default_text).text.should == default_text
     end
+    it 'creates content name based on slug' do
+      default_text = "Hi, this is dog"
+      Content.from_slug(:my_awesome_slug, default: default_text).name.should == :my_awesome_slug
+    end
   end
 
   context "given an already created content" do
