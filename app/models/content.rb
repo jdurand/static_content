@@ -13,7 +13,7 @@ class Content < ActiveRecord::Base
       find_or_initialize_by_slug(slug).tap do |content|
         if content.new_record?
           content.name = slug
-          content.text = options[:default] if content.new_record?
+          content.text = options[:default]
           content.save
         end
       end
