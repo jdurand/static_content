@@ -3,6 +3,24 @@
 #What is static_content?
 static_content provides an easy way of defining static content in your application.
 
+## Installation
+
+Add this line to your application's Gemfile:
+
+    gem 'static_content'
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install static_content
+
+After install the gem, you just need run the install generator:
+
+    $ rails g static_content:install
+
 #Usage
 
 In your view, just add:
