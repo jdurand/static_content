@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    static_content (0.0.1)
+    static_content (1.0.0)
       rails (~> 3.2.6)
       rdiscount (~> 1.6.8)
 
