@@ -11,6 +11,8 @@ rescue LoadError
   require 'rake/rdoctask'
   RDoc::Task = Rake::RDocTask
 end
+require 'rake/testtask'
+require 'rspec/core/rake_task'
 
 RDoc::Task.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
@@ -20,8 +22,8 @@ RDoc::Task.new(:rdoc) do |rdoc|
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
 
-
-
+RSpec::Core::RakeTask.new
+task :default => [:spec]
 
 Bundler::GemHelper.install_tasks
 
