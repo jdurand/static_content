@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = StaticContent::VERSION
   s.authors     = ["Pedro Nascimento", "Sylvestre Mergulhao", "Rodrigo Pinto"]
   s.email       = ["pedro@helabs.com.br"]
-  s.homepage    = "http://www.helabs.com.br"
+  s.homepage    = "https://github.com/Helabs/static_content"
   s.summary     = "static_content provides a simple way of outputting static content in your app."
   s.description = s.summary
 
