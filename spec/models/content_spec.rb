@@ -53,4 +53,15 @@ describe Content do
       @content.parsed_text.should be_html_safe
     end
   end
+  context "using raw content" do
+    before do
+      @content = Content.create({slug: :my_already_created_slug, text: "#Hi, this is dog!"}, as: :admin)
+    end
+    it "displays the markdown tags" do
+      @content.raw_text.should == "#Hi, this is dog!"
+    end
+    it "is html safe" do
+      @content.raw_text.should be_html_safe
+    end
+  end
 end

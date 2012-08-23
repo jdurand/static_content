@@ -5,8 +5,19 @@ class Content < ActiveRecord::Base
   validates_uniqueness_of :slug
 
   def parsed_text
-    RDiscount.new(text).to_html.html_safe
+    markdown.to_html.html_safe
   end
+
+  def raw_text
+    text.html_safe
+  end
+
+  def markdown
+    @content ||= RDiscount.new(text)
+  end
+
+
+
   class << self
     def from_slug(slug, options={})
       raise NoDefaultContentError if options[:default].nil?

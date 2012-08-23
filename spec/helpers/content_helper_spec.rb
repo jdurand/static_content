@@ -11,4 +11,10 @@ describe ContentHelper do
   it "should have an alias as c" do
     helper.c(@options).should == "<p>Hi, this is dog</p>\n"
   end
+  it "returns a raw content by slug" do
+    helper.raw_content(@options).should == "Hi, this is dog"
+  end
+  it "should have an alias as rc" do
+    helper.rc(@options).should == "Hi, this is dog"
+  end
 end
