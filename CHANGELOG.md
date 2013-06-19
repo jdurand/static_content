@@ -15,11 +15,11 @@
 - Added Coveralls
 - Added Gemnasium
 - Added badge of codeclimate
-- updated rdiscount
+- Updated rdiscount
 - Refactories on ContentHelper
 - Refactories on specs of ContentHelper
-- added more things to gitignore
-- raising ArgumentError over NoDefaultContentError
+- Added more things to gitignore
+- Raising ArgumentError over NoDefaultContentError
 
 ### bug fixes
 
