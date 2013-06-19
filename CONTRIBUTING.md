@@ -15,7 +15,7 @@ a test!
 
 5. Make the test pass.
 
-6. Update CHANGELOG.md with a brief description of your changes under the `unreleased` heading.
+6. Update [CHANGELOG.md](https://github.com/Helabs/static_content/blob/master/CHANGELOG.md) with a brief description of your changes under the `unreleased` heading.
 
 7. Commit your changes (`git commit -am 'Added some feature'`)
 

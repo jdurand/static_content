@@ -95,15 +95,11 @@ Static Content follow the [Semantic Versioning](http://semver.org/).
 
 ## Issues
 
-If you have problems, please create a [Github Issue](https://github.com/Helabs/static_content).
+If you have problems, please create a [Github Issue](https://github.com/Helabs/static_content/issues).
 
 ## Contributing
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Added some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+Please see [CONTRIBUTING.md](https://github.com/Helabs/static_content/blob/master/CONTRIBUTING.md) for details.
 
 [gem_version_badge]: https://badge.fury.io/rb/static_content.png
 [ruby_gems]: http://rubygems.org/gems/static_content
