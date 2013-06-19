@@ -1,6 +1,23 @@
 require 'spec_helper'
 describe Content do
-  it { should allow_mass_assignment_of(:text).as(:admin) }
+
+  describe "mass assigment" do
+
+    context "common" do
+
+      it { should_not allow_mass_assignment_of(:name) }
+      it { should_not allow_mass_assignment_of(:text) }
+      it { should_not allow_mass_assignment_of(:slug) }
+    end
+
+    context "admin" do
+
+      it { should_not allow_mass_assignment_of(:name).as(:admin) }
+      it { should allow_mass_assignment_of(:text).as(:admin) }
+      it { should allow_mass_assignment_of(:slug).as(:admin) }
+    end
+  end
+
   [:text, :slug].each do |attribute|
     it { should validate_presence_of(attribute) }
   end
