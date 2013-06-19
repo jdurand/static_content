@@ -18,15 +18,24 @@ describe Content do
     end
   end
 
-  [:text, :slug].each do |attribute|
-    it { should validate_presence_of(attribute) }
-  end
-  context "uniqueness" do
-    before {Content.create({slug: :awesome, text: "Okay"}, as: :admin)}
-    [:slug].each do |attribute|
-      it {should validate_uniqueness_of(attribute)}
+  describe "validation" do
+
+    [:text, :slug].each do |attribute|
+      it { should validate_presence_of(attribute) }
+    end
+
+    context "uniqueness" do
+
+      before do
+        Content.create({slug: :awesome, text: "Okay"}, as: :admin)
+      end
+
+      [:slug].each do |attribute|
+        it {should validate_uniqueness_of(attribute)}
+      end
     end
   end
+
   it "requires a default option" do
     expect{Content.from_slug(:this_slug_has_not_default)}.to raise_error NoDefaultContentError
   end
