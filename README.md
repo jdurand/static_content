@@ -101,6 +101,11 @@ If you have problems, please create a [Github Issue](https://github.com/Helabs/s
 
 Please see [CONTRIBUTING.md](https://github.com/Helabs/static_content/blob/master/CONTRIBUTING.md) for details.
 
+## Credits
+
+Static Content is maintained and funded by [HE:labs](http://helabs.com.br/opensource/).
+Thank you to all the [contributors](https://github.com/Helabs/static_content/graphs/contributors).
+
 [gem_version_badge]: https://badge.fury.io/rb/static_content.png
 [ruby_gems]: http://rubygems.org/gems/static_content
 [code_climate]: https://codeclimate.com/github/Helabs/static_content
