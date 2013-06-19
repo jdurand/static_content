@@ -50,10 +50,16 @@ So you can use this on a seed for example to create the default things.
 
 #### content
 
-Show your content as html, in your view, just add:
+Show your content as html converted from markdown, in your view, just add:
 
-```erb
-<%= c :about_title, default: "My awesome about page" %>
+```
+<%= c :about_title, default: "# My awesome about page" %>
+```
+
+to be converted into
+
+```
+<h1>My awesome about page</h1>
 ```
 
 Please note that a `default` option is required. If it hasn't been created, it will be created upon the first request.
@@ -62,8 +68,14 @@ Please note that a `default` option is required. If it hasn't been created, it w
 
 Show your raw content, in your view, just add:
 
-```erb
-<%= rc :about_title, default: "My awesome about page" %>
+```
+<%= rc :about_title, default: "# My awesome about page" %>
+```
+
+no change the value as
+
+```
+# My awesome about page
 ```
 
 Please note that a `default` option is required. If it hasn't been created, it will be created upon the first request.
