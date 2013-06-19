@@ -1,4 +1,6 @@
 # Static Content
+[![RubyGems][gem_version_badge]][ruby_gems]
+[![Travis CI][travis_ci_badge]][travis_ci]
 
 Static Content provides an easy way of defining static content in your application.
 
@@ -99,3 +101,8 @@ If you have problems, please create a [Github Issue](https://github.com/Helabs/s
 3. Commit your changes (`git commit -am 'Added some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+[gem_version_badge]: https://badge.fury.io/rb/static_content.png
+[ruby_gems]: http://rubygems.org/gems/static_content
+[travis_ci]: http://travis-ci.org/Helabs/static_content
+[travis_ci_badge]: https://secure.travis-ci.org/Helabs/static_content.png
