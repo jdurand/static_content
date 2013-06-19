@@ -36,38 +36,68 @@ describe Content do
     end
   end
 
-  it "requires a default option" do
-    expect{Content.from_slug(:this_slug_has_not_default)}.to raise_error NoDefaultContentError
-  end
+  describe ".from_slug" do
 
-  context "given a new record" do
-    it 'creates a content based on a slug' do
-      expect{Content.from_slug(:my_awesome_slug, default: "Something")}.to change(Content, :count).by(1)
-    end
-    it 'creates a content with a default text' do
-      default_text = "Hi, this is dog"
-      Content.from_slug(:my_awesome_slug, default: default_text).text.should == default_text
-    end
-    it 'creates content name based on slug' do
-      default_text = "Hi, this is dog"
-      Content.from_slug(:my_awesome_slug, default: default_text).name.should == :my_awesome_slug
-    end
-  end
-
-  context "given an already created content" do
-    before do
-      @content = Content.create({slug: :my_already_created_slug, text: "Hi, this is dog"}, as: :admin)
-    end
-    it "finds an already content with a slug" do
-      fetched_content = Content.from_slug(:my_already_created_slug, default: "I have no idea what I'm doing")
-      fetched_content.should == @content
+    it "requires a default option" do
+      expect do
+        Content.from_slug(:this_slug_has_not_default)
+      end.to raise_error NoDefaultContentError
     end
 
-    it "doesn't touch it" do
-      fetched_content = Content.from_slug(:my_already_created_slug, default: "I have no idea what I'm doing")
-      fetched_content.text.should == "Hi, this is dog"
+    context "given a new record" do
+
+      it 'creates a content based on a slug' do
+        expect do
+          Content.from_slug(:my_awesome_slug, default: "Something")
+        end.to change(Content, :count).by(1)
+      end
+
+      describe "saved values" do
+
+        before do
+          default_text = "Hi, this is dog"
+          Content.from_slug(:my_awesome_slug, default: default_text) 
+        end
+
+        subject do
+          Content.last
+        end
+
+        its(:text) { should eq("Hi, this is dog") }
+        its(:name) { should eq("my_awesome_slug") }
+        its(:slug) { should eq("my_awesome_slug") }
+      end
+    end
+
+    context "given an already created content" do
+
+      before do
+        Content.create({slug: :my_awesome_slug, text: "Hi, this is dog"}, as: :admin)
+      end
+
+      it 'not create a new content' do
+        expect do
+          Content.from_slug(:my_awesome_slug, default: "Something")
+        end.to_not change(Content, :count)
+      end
+
+      describe "not change the values" do
+
+        before do
+          Content.from_slug(:my_awesome_slug, default: "I have no idea what I'm doing") 
+        end
+
+        subject do
+          Content.last
+        end
+
+        its(:text) { should eq("Hi, this is dog") }
+        its(:name) { should be_nil }
+        its(:slug) { should eq("my_awesome_slug") }
+      end
     end
   end
+
   context "parsing content using Markdown" do
     before do
       @content = Content.create({slug: :my_already_created_slug, text: "#Hi, this is dog!"}, as: :admin)
