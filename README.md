@@ -86,7 +86,7 @@ static_content generates a model [`Content`](https://github.com/Helabs/static_co
 
 ## Versioning
 
-Pah follow the [Semantic Versioning](http://semver.org/).
+static_content follow the [Semantic Versioning](http://semver.org/).
 
 ## Issues
 
