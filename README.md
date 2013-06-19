@@ -1,6 +1,6 @@
-# static_content
+# Static Content
 
-static_content provides an easy way of defining static content in your application.
+Static Content provides an easy way of defining static content in your application.
 
 ## Installation
 
@@ -82,11 +82,11 @@ Please note that a `default` option is required. If it hasn't been created, it w
 
 ## Warning
 
-static_content generates a model [`Content`](https://github.com/Helabs/static_content/blob/master/app/models/content.rb) and a table [`contents`](https://github.com/Helabs/static_content/blob/master/db/migrate/20120705141451_create_contents.rb), so your app should not contain this model and table.
+Static Content generates a model [`Content`](https://github.com/Helabs/static_content/blob/master/app/models/content.rb) and a table [`contents`](https://github.com/Helabs/static_content/blob/master/db/migrate/20120705141451_create_contents.rb), so your app should not contain this model and table.
 
 ## Versioning
 
-static_content follow the [Semantic Versioning](http://semver.org/).
+Static Content follow the [Semantic Versioning](http://semver.org/).
 
 ## Issues
 
