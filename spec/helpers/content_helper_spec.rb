@@ -1,28 +1,34 @@
 require 'spec_helper'
 describe ContentHelper do
+
   before do
-    @options = [:sidebar_text, default: "What's up, dog"]
     content = Content.new({slug: :sidebar_text, text: "Hi, this is dog"}, as: :admin)
-    Content.should_receive(:from_slug).with(@options).and_return(content)
+    Content.should_receive(:from_slug).with(options).and_return(content)
   end
 
-  context "parsed content" do
+  let(:options) do
+    [:sidebar_text, default: "What's up, dog"]
+  end
+
+  context "#content" do
+
     it "returns a content by slug" do
-      helper.content(@options).should == "<p>Hi, this is dog</p>\n"
+      helper.content(options).should eq("<p>Hi, this is dog</p>\n")
     end
 
     it "is aliased as c" do
-      helper.c(@options).should == "<p>Hi, this is dog</p>\n"
+      helper.c(options).should eq("<p>Hi, this is dog</p>\n")
     end
   end
 
-  context "raw content" do
+  context "#raw_content" do
+
     it "returns a raw content by slug" do
-      helper.raw_content(@options).should == "Hi, this is dog"
+      helper.raw_content(options).should eq("Hi, this is dog")
     end
 
     it "is aliased as rc" do
-      helper.rc(@options).should == "Hi, this is dog"
+      helper.rc(options).should eq("Hi, this is dog")
     end
   end
 end
