@@ -6,6 +6,7 @@
 
 ### improvements
 
+- Begin the use of Semantic Versioning
 - Created the Changelog
 - Better Readme
 - Refactories on model Content
