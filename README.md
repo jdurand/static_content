@@ -1,6 +1,7 @@
 # Static Content
 [![RubyGems][gem_version_badge]][ruby_gems]
 [![Travis CI][travis_ci_badge]][travis_ci]
+[![Coveralls][coveralls_badge]][coveralls]
 [![Code Climate][code_climate_badge]][code_climate]
 
 Static Content provides an easy way of defining static content in your application.
@@ -109,3 +110,5 @@ If you have problems, please create a [Github Issue](https://github.com/Helabs/s
 [code_climate_badge]: https://codeclimate.com/github/Helabs/static_content.png
 [travis_ci]: http://travis-ci.org/Helabs/static_content
 [travis_ci_badge]: https://secure.travis-ci.org/Helabs/static_content.png
+[coveralls]: https://coveralls.io/r/Helabs/static_content
+[coveralls_badge]: https://coveralls.io/repos/Helabs/static_content/badge.png?branch=master
