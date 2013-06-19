@@ -113,15 +113,17 @@ describe Content do
     end
   end
 
-  context "using raw content" do
-    before do
-      @content = Content.create({slug: :my_already_created_slug, text: "#Hi, this is dog!"}, as: :admin)
+  describe "#raw_text" do
+
+    let(:content) do
+      Content.create({slug: :my_already_created_slug, text: "#Hi, this is dog!"}, as: :admin)
     end
+
     it "displays the markdown tags" do
-      @content.raw_text.should == "#Hi, this is dog!"
+      content.raw_text.should == "#Hi, this is dog!"
     end
     it "is html safe" do
-      @content.raw_text.should be_html_safe
+      content.raw_text.should be_html_safe
     end
   end
 end
