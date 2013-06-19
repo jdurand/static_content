@@ -1,8 +1,21 @@
 require 'rdiscount' #TODO: Fix this stupid require statement.
 class Content < ActiveRecord::Base
+
   attr_accessible :slug, :text, as: :admin
+
   validates :slug, :text, presence: true
-  validates_uniqueness_of :slug
+  validates :slug, uniqueness: true
+
+  def self.from_slug(slug, options={})
+    raise NoDefaultContentError if options[:default].nil?
+    find_or_initialize_by_slug(slug).tap do |content|
+      if content.new_record?
+        content.name = slug
+        content.text = options[:default]
+        content.save
+      end
+    end
+  end
 
   def parsed_text
     markdown.to_html.html_safe
@@ -12,25 +25,13 @@ class Content < ActiveRecord::Base
     text.html_safe
   end
 
-  def markdown
-    @content ||= RDiscount.new(text)
-  end
+  private
 
-
-
-  class << self
-    def from_slug(slug, options={})
-      raise NoDefaultContentError if options[:default].nil?
-      find_or_initialize_by_slug(slug).tap do |content|
-        if content.new_record?
-          content.name = slug
-          content.text = options[:default]
-          content.save
-        end
-      end
+    def markdown
+      @content ||= RDiscount.new(text)
     end
-  end
 end
+
 class NoDefaultContentError < StandardError
   def initialize(msg = "You must provide a default text for a content.")
     super(msg)
