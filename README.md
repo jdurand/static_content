@@ -90,7 +90,7 @@ Static Content follow the [Semantic Versioning](http://semver.org/).
 
 ## Issues
 
-If you have problems, please create a [Github Issue](https://github.com/Helabs/rails-template/issues).
+If you have problems, please create a [Github Issue](https://github.com/Helabs/static_content).
 
 ## Contributing
 
