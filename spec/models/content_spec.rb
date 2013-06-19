@@ -41,7 +41,7 @@ describe Content do
     it "requires a default option" do
       expect do
         Content.from_slug(:this_slug_has_not_default)
-      end.to raise_error NoDefaultContentError
+      end.to raise_error ArgumentError
     end
 
     context "given a new record" do

@@ -7,7 +7,7 @@ class Content < ActiveRecord::Base
   validates :slug, uniqueness: true
 
   def self.from_slug(slug, options={})
-    raise NoDefaultContentError if options[:default].nil?
+    raise ArgumentError.new("You must provide a default text for a content.") if options[:default].nil?
     find_or_initialize_by_slug(slug).tap do |content|
       if content.new_record?
         content.name = slug
@@ -32,8 +32,3 @@ class Content < ActiveRecord::Base
     end
 end
 
-class NoDefaultContentError < StandardError
-  def initialize(msg = "You must provide a default text for a content.")
-    super(msg)
-  end
-end
