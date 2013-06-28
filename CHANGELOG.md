@@ -9,6 +9,7 @@
 - removed the column name of contents
 - removed ignored files on specs/dummy
 - removed Gemfile.lock
+- Updated travis.yml to run migrations
 
 ### bug fixes
 
