@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.0.0 (June 28, 2013)
+
+### features
+
+### improvements
+
+- removed the column name of contents
+- removed ignored files on specs/dummy
+
+### bug fixes
+
 ## 1.2.0 (June 20, 2013)
 
 ### features
