@@ -5,14 +5,12 @@ describe Content do
 
     context "common" do
 
-      it { should_not allow_mass_assignment_of(:name) }
       it { should_not allow_mass_assignment_of(:text) }
       it { should_not allow_mass_assignment_of(:slug) }
     end
 
     context "admin" do
 
-      it { should_not allow_mass_assignment_of(:name).as(:admin) }
       it { should allow_mass_assignment_of(:text).as(:admin) }
       it { should allow_mass_assignment_of(:slug).as(:admin) }
     end
@@ -64,7 +62,6 @@ describe Content do
         end
 
         its(:text) { should eq("Hi, this is dog") }
-        its(:name) { should eq("my_awesome_slug") }
         its(:slug) { should eq("my_awesome_slug") }
       end
     end
@@ -92,7 +89,6 @@ describe Content do
         end
 
         its(:text) { should eq("Hi, this is dog") }
-        its(:name) { should be_nil }
         its(:slug) { should eq("my_awesome_slug") }
       end
     end
