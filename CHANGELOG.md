@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.0.1 (unreleased)
+
+### features
+
+### improvements
+
+- Updated travis.yml to run migrations
+
 ## 2.0.0 (June 28, 2013)
 
 ### features
@@ -9,7 +17,6 @@
 - removed the column name of contents
 - removed ignored files on specs/dummy
 - removed Gemfile.lock
-- Updated travis.yml to run migrations
 
 ### bug fixes
 
