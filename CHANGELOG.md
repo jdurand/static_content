@@ -8,6 +8,8 @@
 
 - Updated travis.yml to run migrations
 
+### bug fixes
+
 ## 2.0.0 (June 28, 2013)
 
 ### features
