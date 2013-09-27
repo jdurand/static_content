@@ -1,9 +1,9 @@
 require 'spec_helper'
-describe ContentHelper do
+describe StaticContent::ContentHelper do
 
   before do
-    content = Content.new({slug: :sidebar_text, text: "Hi, this is dog"}, as: :admin)
-    Content.should_receive(:from_slug).with(options).and_return(content)
+    content = StaticContent::Content.new({slug: :sidebar_text, text: "Hi, this is dog"}, as: :admin)
+    StaticContent::Content.should_receive(:from_slug).with(options).and_return(content)
   end
 
   let(:options) do

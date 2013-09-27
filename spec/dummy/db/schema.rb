@@ -11,9 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130628173903) do
+ActiveRecord::Schema.define(:version => 20130927194110) do
 
-  create_table "contents", :force => true do |t|
+  create_table "static_content_contents", :force => true do |t|
     t.string   "slug"
     t.text     "text"
     t.datetime "created_at", :null => false

@@ -35,7 +35,7 @@ The content we create can be normal text or a markdown. Let`s see the way we can
 
 You can create as a normal model with:
 
-    Content.create({slug: :about_title, text: "My awesome about page"}, as: :admin)
+    StaticContent::Content.create({slug: :about_title, text: "My awesome about page"}, as: :admin)
 
 special attention to the `as: :admin`, the fields is only acessible to `admin`.
 
@@ -43,9 +43,9 @@ This is intended to be used with admin panels such as Typus or ActiveAdmin.
 
 #### The better way
 
-The better way is to use the `Content.from_slug` like:
+The better way is to use the `StaticContent::Content.from_slug` like:
 
-    Content.from_slug(:about_title, default: "My awesome about page")
+    StaticContent::Content.from_slug(:about_title, default: "My awesome about page")
 
 as this uses `find_or_initialize`, if is a new `slug` its create, if a old one its only return the value not raising a error.
 
@@ -84,10 +84,6 @@ no change the value as
 ```
 
 Please note that a `default` option is required. If it hasn't been created, it will be created upon the first request.
-
-## Warning
-
-Static Content generates a model [`Content`](https://github.com/Helabs/static_content/blob/master/app/models/content.rb) and a table [`contents`](https://github.com/Helabs/static_content/blob/master/db/migrate/20120705141451_create_contents.rb), so your app should not contain this model and table.
 
 ## Versioning
 

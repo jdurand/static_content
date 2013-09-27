@@ -1,0 +1,14 @@
+module StaticContent
+  module ContentHelper
+
+    def content(*args)
+      StaticContent::Content.from_slug(*args).parsed_text
+    end
+    alias :c :content
+
+    def raw_content(*args)
+      StaticContent::Content.from_slug(*args).raw_text
+    end
+    alias :rc :raw_content
+  end
+end
