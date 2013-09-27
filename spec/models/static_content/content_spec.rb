@@ -1,5 +1,5 @@
 require 'spec_helper'
-describe Content do
+describe StaticContent::Content do
 
   describe "mass assigment" do
 
@@ -25,7 +25,7 @@ describe Content do
     context "uniqueness" do
 
       before do
-        Content.create({slug: :awesome, text: "Okay"}, as: :admin)
+        StaticContent::Content.create({slug: :awesome, text: "Okay"}, as: :admin)
       end
 
       [:slug].each do |attribute|
@@ -38,7 +38,7 @@ describe Content do
 
     it "requires a default option" do
       expect do
-        Content.from_slug(:this_slug_has_not_default)
+        StaticContent::Content.from_slug(:this_slug_has_not_default)
       end.to raise_error ArgumentError
     end
 
@@ -46,19 +46,19 @@ describe Content do
 
       it 'creates a content based on a slug' do
         expect do
-          Content.from_slug(:my_awesome_slug, default: "Something")
-        end.to change(Content, :count).by(1)
+          StaticContent::Content.from_slug(:my_awesome_slug, default: "Something")
+        end.to change(StaticContent::Content, :count).by(1)
       end
 
       describe "saved values" do
 
         before do
           default_text = "Hi, this is dog"
-          Content.from_slug(:my_awesome_slug, default: default_text) 
+          StaticContent::Content.from_slug(:my_awesome_slug, default: default_text)
         end
 
         subject do
-          Content.last
+          StaticContent::Content.last
         end
 
         its(:text) { should eq("Hi, this is dog") }
@@ -69,23 +69,23 @@ describe Content do
     context "given an already created content" do
 
       before do
-        Content.create({slug: :my_awesome_slug, text: "Hi, this is dog"}, as: :admin)
+        StaticContent::Content.create({slug: :my_awesome_slug, text: "Hi, this is dog"}, as: :admin)
       end
 
       it 'not create a new content' do
         expect do
-          Content.from_slug(:my_awesome_slug, default: "Something")
-        end.to_not change(Content, :count)
+          StaticContent::Content.from_slug(:my_awesome_slug, default: "Something")
+        end.to_not change(StaticContent::Content, :count)
       end
 
       describe "not change the values" do
 
         before do
-          Content.from_slug(:my_awesome_slug, default: "I have no idea what I'm doing") 
+          StaticContent::Content.from_slug(:my_awesome_slug, default: "I have no idea what I'm doing")
         end
 
         subject do
-          Content.last
+          StaticContent::Content.last
         end
 
         its(:text) { should eq("Hi, this is dog") }
@@ -97,7 +97,7 @@ describe Content do
   describe "#parsed_text" do
 
     let(:content) do
-      Content.create({slug: :my_already_created_slug, text: "#Hi, this is dog!"}, as: :admin)
+      StaticContent::Content.create({slug: :my_already_created_slug, text: "#Hi, this is dog!"}, as: :admin)
     end
 
     it "displays appropriate tags" do
@@ -112,7 +112,7 @@ describe Content do
   describe "#raw_text" do
 
     let(:content) do
-      Content.create({slug: :my_already_created_slug, text: "#Hi, this is dog!"}, as: :admin)
+      StaticContent::Content.create({slug: :my_already_created_slug, text: "#Hi, this is dog!"}, as: :admin)
     end
 
     it "displays the markdown tags" do
