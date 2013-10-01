@@ -2,7 +2,10 @@ require 'spec_helper'
 describe StaticContent::ContentHelper do
 
   before do
-    content = StaticContent::Content.new({slug: :sidebar_text, text: "Hi, this is dog"}, as: :admin)
+    content = StaticContent::Content.new.tap do |sc|
+      sc.slug = :sidebar_text
+      sc.text = "Hi, this is dog"
+    end
     StaticContent::Content.should_receive(:from_slug).with(options).and_return(content)
   end
 

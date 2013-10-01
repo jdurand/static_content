@@ -1,21 +1,6 @@
 require 'spec_helper'
 describe StaticContent::Content do
 
-  describe "mass assigment" do
-
-    context "common" do
-
-      it { should_not allow_mass_assignment_of(:text) }
-      it { should_not allow_mass_assignment_of(:slug) }
-    end
-
-    context "admin" do
-
-      it { should allow_mass_assignment_of(:text).as(:admin) }
-      it { should allow_mass_assignment_of(:slug).as(:admin) }
-    end
-  end
-
   describe "validation" do
 
     [:text, :slug].each do |attribute|
@@ -25,7 +10,7 @@ describe StaticContent::Content do
     context "uniqueness" do
 
       before do
-        StaticContent::Content.create({slug: :awesome, text: "Okay"}, as: :admin)
+        StaticContent::Content.from_slug(:awesome, default: "Okay")
       end
 
       [:slug].each do |attribute|
@@ -69,7 +54,7 @@ describe StaticContent::Content do
     context "given an already created content" do
 
       before do
-        StaticContent::Content.create({slug: :my_awesome_slug, text: "Hi, this is dog"}, as: :admin)
+        StaticContent::Content.from_slug(:my_awesome_slug, default: "Hi, this is dog")
       end
 
       it 'not create a new content' do
@@ -97,7 +82,7 @@ describe StaticContent::Content do
   describe "#parsed_text" do
 
     let(:content) do
-      StaticContent::Content.create({slug: :my_already_created_slug, text: "#Hi, this is dog!"}, as: :admin)
+      StaticContent::Content.from_slug(:my_already_created_slug, default: "#Hi, this is dog!")
     end
 
     it "displays appropriate tags" do
@@ -112,7 +97,7 @@ describe StaticContent::Content do
   describe "#raw_text" do
 
     let(:content) do
-      StaticContent::Content.create({slug: :my_already_created_slug, text: "#Hi, this is dog!"}, as: :admin)
+      StaticContent::Content.from_slug(:my_already_created_slug, default: "#Hi, this is dog!")
     end
 
     it "displays the markdown tags" do

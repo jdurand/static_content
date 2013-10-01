@@ -31,19 +31,7 @@ After install the gem, you just need run the install generator:
 
 The content we create can be normal text or a markdown. Let`s see the way we can create a content.
 
-#### Standard Way
-
-You can create as a normal model with:
-
-    StaticContent::Content.create({slug: :about_title, text: "My awesome about page"}, as: :admin)
-
-special attention to the `as: :admin`, the fields is only acessible to `admin`.
-
-This is intended to be used with admin panels such as Typus or ActiveAdmin.
-
-#### The better way
-
-The better way is to use the `StaticContent::Content.from_slug` like:
+Use the `StaticContent::Content.from_slug` like:
 
     StaticContent::Content.from_slug(:about_title, default: "My awesome about page")
 
