@@ -2,7 +2,8 @@
 
 ## 2.0.1 (unreleased)
 
-- Isolated engine in order to avoid problems ou attaching the gem to projets
+- Isolated engine in order to avoid problems on attaching the gem to projets
+- Includes rails 4 support
 
 ### features
 
