@@ -22,4 +22,5 @@ spec/reports
 test/tmp
 test/version_tmp
 tmp
+gemfiles/*.gemfile.lock
 
