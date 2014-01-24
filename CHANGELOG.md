@@ -4,6 +4,7 @@
 
 - Isolated engine in order to avoid problems on attaching the gem to projets
 - Includes rails 4 support
+- Add info about best practices on CONTRIBUTING
 
 ### features
 
