@@ -5,7 +5,7 @@ module StaticContent
 
     initializer 'static_content.action_controller' do |app|
       ActiveSupport.on_load :action_controller do
-        helper StaticContent::ContentHelper
+        ActionView::Base.send :include, StaticContent::ContentHelper
       end
     end
 
