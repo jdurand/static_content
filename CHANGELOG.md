@@ -1,17 +1,16 @@
 # Changelog
 
-## 2.0.1 (unreleased)
-
-- Isolated engine in order to avoid problems on attaching the gem to projets
-- Includes rails 4 support
-- Add info about best practices on CONTRIBUTING
-- Add info about how release the gem
+## 2.0.1 (January 31, 2014)
 
 ### features
 
 ### improvements
 
 - Updated travis.yml to run migrations
+- Isolated engine in order to avoid problems on attaching the gem to projets
+- Includes rails 4 support
+- Add info about best practices on CONTRIBUTING
+- Add info about how release the gem
 
 ### bug fixes
 
