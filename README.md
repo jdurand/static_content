@@ -96,6 +96,10 @@ Follow this steps to release a new version of the gem.
 1. Run `$ rake release`, this will send the gem to the rubygems;
 1. Check if the gem is on the rubygems and the tags are correct on the github;
 
+## Maintainers
+
+- [Rafael Fiuza](https://github.com/guiloyins)
+
 ## Credits
 
 Static Content is maintained and funded by [HE:labs](http://helabs.com.br/opensource/).
