@@ -5,6 +5,9 @@
 [![Code Climate][code_climate_badge]][code_climate]
 [![Gemnasium][gemnasium_badge]][gemnasium]
 
+
+### :warning: This gem is deprecated  and will not be maintained anymore. Instead, use [phrasing](https://github.com/infinum/phrasing) that does the same with some plus.  :warning:
+
 Static Content provides an easy way of defining static content in your application.
 
 ## Installation
