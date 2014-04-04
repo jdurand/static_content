@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", ">= 3.2.6", "< 5"
   s.add_dependency "rdiscount", "~> 2.1.6"
 
-  s.post_install_message "StaticContent is deprecated and will not be maintained anymore. Instead, use phrasing (https://github.com/infinum/phrasing) that does the same with some plus."
+  s.post_install_message = "StaticContent is deprecated and will not be maintained anymore. Instead, use phrasing (https://github.com/infinum/phrasing) that does the same with some plus."
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "coveralls"
