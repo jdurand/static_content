@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.0.2 (April 4, 2014)
+
+### features
+
+- Add deprecation info 
+
+### improvements
+
+### bug fixes
+
 ## 2.0.1 (January 31, 2014)
 
 ### features
