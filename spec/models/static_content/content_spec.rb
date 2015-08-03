@@ -100,9 +100,6 @@ describe StaticContent::Content do
       StaticContent::Content.from_slug(:my_already_created_slug, default: "#Hi, this is dog!")
     end
 
-    it "displays the markdown tags" do
-      content.raw_text.should == "#Hi, this is dog!"
-    end
     it "is html safe" do
       content.raw_text.should be_html_safe
     end

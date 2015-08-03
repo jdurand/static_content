@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.0 (August 3rd, 2015)
+
+- Remove markdown support
+
 ## 2.0.2 (April 4, 2014)
 
 ### features

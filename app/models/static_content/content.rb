@@ -1,4 +1,3 @@
-require 'rdiscount' #TODO: Fix this stupid require statement.
 module StaticContent
   class Content < ActiveRecord::Base
 
@@ -16,17 +15,11 @@ module StaticContent
     end
 
     def parsed_text
-      markdown.to_html.html_safe
+      text.to_html.html_safe
     end
 
     def raw_text
       text.html_safe
-    end
-
-    private
-
-    def markdown
-      @content ||= RDiscount.new(text)
     end
   end
 end
